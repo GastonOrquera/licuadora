@@ -9,16 +9,17 @@ var licuadora = document.getElementById("blender");
 function controlarLicuadora() {
   if (estadoLicuadora == "apagado") {
     estadoLicuadora = "encendido";
-    sonidoOnOff();
-    licuadora.classList.add('active');
-  } else {
+    soundLicuadora();
+    licuadora.classList.toggle('active');
+  }
+  else {
     estadoLicuadora = "apagado";
-    sonidoOnOff();
+    soundLicuadora();
     licuadora.classList.remove('active');
   }
 }
 
-function sonidoOnOff() {
+function soundLicuadora() {
   if (sonidoLicuadora.paused) {
     botonLicuadora.play();
     sonidoLicuadora.play();
